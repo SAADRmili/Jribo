@@ -19,12 +19,7 @@ namespace Jribo.Core
        
         public Product addProduct(string name , double price,Brand brand)
         {
-            Product a = new Product();
-
-            a.IdProduct = 1;
-            a.ProductName =name;
-            a.ProductPrice = price;
-            a.brand = brand;
+            Product a = new Product(name, price, brand);
             List.Add(a);
             return a; 
         }
@@ -99,8 +94,20 @@ namespace Jribo.Core
         }
         public List<Product> Data(List<Brand> brands)
         {
-            List = repo.GetProducts( brands);
+            List = repo.GetProducts(brands);
             return List;
+        }
+
+
+        public bool Save (Product p)
+        {
+            var success = true; 
+            if(!p.Validate())
+            {
+                success = false;
+            }
+
+            return success;
         }
 
     }

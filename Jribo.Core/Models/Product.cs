@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Threading;
 
 namespace Jribo.Core
 {
     public class Product
     {
+        private static int _counter;
         public int IdProduct { get; set; }
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
@@ -14,10 +16,24 @@ namespace Jribo.Core
         {
 
         }
-
-        public Product(int idProduct, string productName, double productPrice,Brand  Brand)
+        public  bool Validate()
         {
-            IdProduct = idProduct;
+            bool isValid = true;
+            if (string.IsNullOrEmpty(ProductName))
+            {
+                isValid = false;
+            }
+            if (ProductPrice == null)
+            {
+                isValid = false;
+            }
+            return isValid;
+        }
+
+
+        public Product(string productName, double productPrice,Brand  Brand)
+        {
+            IdProduct = Interlocked.Increment(ref _counter); ;
             ProductName = productName;
             ProductPrice = productPrice;
             brand = Brand;
