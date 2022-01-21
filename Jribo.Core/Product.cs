@@ -25,7 +25,7 @@ namespace Jribo.Core
 
         public override string ToString()
         {
-            return " Product ID:- " + IdProduct + "  -> Product Name:- " +ProductName + " ---> Product Price:- " + ProductPrice +" Brand: --> "+brand.Name;
+            return " Product ID:- " + IdProduct + "\n  -> Product Name:- " +ProductName + " ---> Product Price:- " + ProductPrice +" Brand: --> "+brand.Name;
         }
     }
 

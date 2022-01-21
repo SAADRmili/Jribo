@@ -8,7 +8,7 @@ namespace Jribo.Core
 {
     public class ProductsService
     {
-        List<Brand> brands; 
+       
         public ProductsService()
         {
             
@@ -57,7 +57,12 @@ namespace Jribo.Core
         {
             foreach (var item in List)
             {
-                if (item == p) return item.brand;
+                if (item == p)
+                {
+
+                    item.brand.GetSetProduct.Add(p);
+                    return item.brand;
+                        }
 
             }
             return null;

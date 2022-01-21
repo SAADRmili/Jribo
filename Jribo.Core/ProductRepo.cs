@@ -12,11 +12,10 @@ namespace Jribo.Core
         public List<Product> GetProducts( List<Brand> brands)
         {
             Random random = new Random();
-            Guid guid = Guid.NewGuid();
             var addlist = new List<Product>();
             for (int i = 0; i < 10; i++)
             {
-                addlist.Add(new Product(i, guid.ToString(), random.NextDouble(),brands[i]));
+                addlist.Add(new Product(i+1, RandomStrings.RandomString(10), random.NextDouble(),brands[i]));
             }
             return addlist;
         }
