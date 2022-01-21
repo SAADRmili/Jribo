@@ -17,12 +17,14 @@ namespace Jribo.Core
         private List<Product> List = new List<Product>();
 
        
-        public Product addProduct(string name , double price)
+        public Product addProduct(string name , double price,Brand brand)
         {
             Product a = new Product();
+
             a.IdProduct = 1;
             a.ProductName =name;
             a.ProductPrice = price;
+            a.brand = brand;
             List.Add(a);
             return a; 
         }
@@ -37,6 +39,31 @@ namespace Jribo.Core
             }
             return null;
         }
+
+
+        public Product getProductByBrand(List<Product> list , Brand brand)
+        {
+            foreach (var item in List)
+            {
+                if (item.brand == brand) return item;
+
+            }
+            return null;
+        }
+
+
+
+        public Brand getBrandByProduct(List<Product> list, Product p)
+        {
+            foreach (var item in List)
+            {
+                if (item == p) return item.brand;
+
+            }
+            return null;
+
+        }
+
 
         public bool RemoveProduct (List<Product> List,int id)
         {
