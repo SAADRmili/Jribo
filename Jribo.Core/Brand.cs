@@ -15,6 +15,16 @@ namespace Jribo.Core
             set {  Lst = value; }
         }
 
+        public Brand()
+        {
+
+        }
+
+        public Brand(string name)
+        {
+            Name = name;
+        }
+
         public void Print()
 
         {

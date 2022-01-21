@@ -8,6 +8,11 @@ namespace Jribo.Core
 {
     public class ProductsService
     {
+        List<Brand> brands; 
+        public ProductsService()
+        {
+            
+        }
         private ProductRepo repo = new ProductRepo();
         private List<Product> List = new List<Product>();
 
@@ -60,9 +65,9 @@ namespace Jribo.Core
             }
             return newPrice;
         }
-        public List<Product> Data()
+        public List<Product> Data(List<Brand> brands)
         {
-            List = repo.GetProducts();
+            List = repo.GetProducts( brands);
             return List;
         }
 

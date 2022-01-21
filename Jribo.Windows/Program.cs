@@ -1,6 +1,7 @@
 ﻿using Jribo.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Jribo.Windows
 {
@@ -10,15 +11,22 @@ namespace Jribo.Windows
         {
             List<Product> List = new List<Product>();
 
+            BrandRepo brandRepo = new BrandRepo();
+
+            var brands = brandRepo.GetBrands();
+
 
             ProductsService productsService = new ProductsService();
 
-            List = productsService.Data();
+            List = productsService.Data(brands);
 
-           var d =  productsService.RemoveProduct(List, 1);
 
-            Console.WriteLine("deleted is --> "+d);
-            
+            foreach (var item in List)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
+
             //Product a = new Product();
 
             //a.ProductName = "Alto";
@@ -32,15 +40,11 @@ namespace Jribo.Windows
             //List.Add(b);
 
 
+         
 
+          
 
-            Brand p = new Brand();
-
-            p.Name = "sourav";
-
-            p.GetSetProduct = List;
-
-            p.Print();
+           
 
 
 
