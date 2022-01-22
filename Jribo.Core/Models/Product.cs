@@ -6,15 +6,15 @@ namespace Jribo.Core
     public class Product
     {
         private static int _counter;
-        public int IdProduct { get; set; }
+        public int IdProduct { get; private set; }
         public string ProductName { get; set; }
-        public double ProductPrice { get; set; }
+        public double? ProductPrice { get; set; }
 
         public Brand brand { get; set; }
 
         public Product()
         {
-
+            IdProduct = Interlocked.Increment(ref _counter); 
         }
         public  bool Validate()
         {
@@ -33,7 +33,7 @@ namespace Jribo.Core
 
         public Product(string productName, double productPrice,Brand  Brand)
         {
-            IdProduct = Interlocked.Increment(ref _counter); ;
+            IdProduct = Interlocked.Increment(ref _counter); 
             ProductName = productName;
             ProductPrice = productPrice;
             brand = Brand;

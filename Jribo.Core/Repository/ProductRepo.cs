@@ -25,10 +25,10 @@ namespace Jribo.Core
         {
             Product product = new Product();
 
-            if (id == 2)
+            if (id == 1)
             {
-                product.IdProduct = id;
-                product.ProductName = "PS5";
+              
+                product.ProductName = "dsdsd";
               
                 product.ProductPrice = 500.39;
             }

@@ -15,14 +15,10 @@ namespace Jribo.Windows
 
 
             List<Product> List = new List<Product>();
-            ProductsService productsService = new ProductsService();
-
-            List = productsService.Data(brands);
+            ProductsService productsService = new ProductsService(List);
 
 
-           
-
-           productsService.addProduct(RandomStrings.RandomString(10), 3000, brands[2]);
+            productsService.addProduct(RandomStrings.RandomString(10), 3000, brands[2]);
             productsService.addProduct(RandomStrings.RandomString(10), 3000, brands[2]);
             productsService.addProduct(RandomStrings.RandomString(10), 3000, brands[2]);
 
@@ -34,9 +30,9 @@ namespace Jribo.Windows
             }
 
 
-
-            var brand = productsService.getBrandByProduct(List, List[11]);
-            brand = productsService.getBrandByProduct(List, List[12]);
+            
+            var brand = productsService.getBrandByProduct(List, List[1]);
+            brand = productsService.getBrandByProduct(List, List[2]);
 
            
 

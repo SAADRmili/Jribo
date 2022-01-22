@@ -8,13 +8,20 @@ namespace Jribo.Core
 {
     public class ProductsService
     {
-       
+        private List<Product> List;
+        private ProductRepo repo = new ProductRepo();
+
+
         public ProductsService()
         {
-            
+                
         }
-        private ProductRepo repo = new ProductRepo();
-        private List<Product> List = new List<Product>();
+        public ProductsService(List<Product> l)
+        {
+            List = l; 
+        }
+      
+     
 
        
         public Product addProduct(string name , double price,Brand brand)
@@ -86,7 +93,7 @@ namespace Jribo.Core
             {
                 if (item.IdProduct == id)
                 {
-                    newPrice = item.ProductPrice - (promo * item.ProductPrice);
+                    newPrice = (double)(item.ProductPrice - (promo * item.ProductPrice));
                 }
 
             }
