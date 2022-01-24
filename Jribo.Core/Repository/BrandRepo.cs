@@ -23,5 +23,16 @@ namespace Jribo.Core
 
             return addList;
         }
+
+        public bool Save(Brand b)
+        {
+            var success = true;
+            if (!b.Validate())
+            {
+                success = false;
+            }
+
+            return success;
+        }
     }
 }

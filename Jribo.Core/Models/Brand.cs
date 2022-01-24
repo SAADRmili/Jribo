@@ -5,8 +5,10 @@ namespace Jribo.Core
 {
     public class Brand
     {
-        List<Product> Lst = new List<Product>();
+       
         public string Name { get; set; }
+
+        List<Product> Lst = new List<Product>();
         public List<Product> GetSetProduct
 
         {
@@ -20,9 +22,24 @@ namespace Jribo.Core
 
         }
 
+     
+
         public Brand(string name)
         {
             Name = name;
+            
+        }
+
+
+        public bool Validate()
+        {
+            bool isValid = true;
+            if (string.IsNullOrEmpty(Name))
+            {
+                isValid = false;
+            }
+
+            return isValid;
         }
 
         public void Print()

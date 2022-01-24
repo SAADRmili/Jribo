@@ -2,6 +2,7 @@ using Jribo.Core;
 using System;
 using System.Collections.Generic;
 using Xunit;
+using AutoFixture;
 
 namespace Jribo.Test
 {
@@ -10,13 +11,14 @@ namespace Jribo.Test
         private ProductsService productService ;
         private BrandRepo brandrepo ;
         private ProductRepo productRepo;
-
+        private Fixture fixture;
 
         public ProductsTests()
         {
              productService = new ProductsService();
              brandrepo = new BrandRepo();
              productRepo = new ProductRepo();
+             fixture = new Fixture();
         }
 
 

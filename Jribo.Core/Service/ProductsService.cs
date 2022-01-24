@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Jribo.Core
 {
     public class ProductsService
@@ -21,9 +23,6 @@ namespace Jribo.Core
             List = l; 
         }
       
-     
-
-       
         public Product addProduct(string name , double price,Brand brand)
         {
             Product a = new Product(name, price, brand);
